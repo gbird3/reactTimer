@@ -3,7 +3,9 @@ var React = require('react');
 var Countdown = React.createClass({
   render: function () {
     return (
-      <h2>Countdown Componenet</h2>
+      <h3>Countdown Componenet</h3>
     );
   }
 });
+
+module.exports = Countdown;

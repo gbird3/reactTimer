@@ -3,7 +3,12 @@ var React = require('react');
 var Timer = React.createClass({
   render: function () {
     return(
-      <h3>Timer Componenet</h3>
+      <div>
+        <h3>Timer Component</h3>
+        <button className="button">Start Timer</button>
+      </div>
     );
   }
 });
+
+module.exports = Timer;
