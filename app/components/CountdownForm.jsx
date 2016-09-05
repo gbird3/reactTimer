@@ -1,4 +1,5 @@
 var React = require('react');
+var Controls = require('Controls');
 
 var CountdownForm = React.createClass({
   onSubmit: function (e) {
@@ -11,11 +12,20 @@ var CountdownForm = React.createClass({
     }
   },
   render: function () {
+    var {countdownStatus} = this.props;
+    var renderControls = () => {
+      if(countdownStatus === 'stopped'){
+        return <button className="button expanded">Start</button>
+      } else {
+        return <Controls countdownStatus="paused"/>
+      }
+    };
     return(
       <div>
         <form ref="form" onSubmit={this.onSubmit} className="countdown-form">
           <input type="text" placeholder="Enter time in seconds" ref="seconds"/>
-          <button className="button expanded">Start</button>
+            <button className="button expanded">Start</button>
+            {renderControls()}
         </form>
       </div>
     );
